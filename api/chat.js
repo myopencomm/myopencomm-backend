@@ -30,8 +30,8 @@ export default async function handler(req, res) {
         // 5. Connect to Google AI
         const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
         
-        // WE USE THE MODEL THAT WAS CONFIRMED TO EXIST IN YOUR DEBUG LIST
-        const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+        // Use the 'latest' alias which always points to the currently active Free Tier model
+        const model = genAI.getGenerativeModel({ model: "gemini-flash-latest" });
 
         // 6. The Scientific System Prompt
         const prompt = `
